@@ -17,7 +17,7 @@ the A* algorithm for path finding, to generate a path to each target during the 
 agent’s path.
 ## Project Details
 Normal mode
-![Normal mode image](/ReadMeImages/NormalMode.png)
+![Normal mode image](ReadMeImages/NormalMode.png)
 Debug mode
 ![Debug mode image](/ReadMeImages/DebugMode.png)
 # Implentation
