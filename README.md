@@ -9,10 +9,13 @@ The other techniques on display in my implementation are **steering force** and 
 ## Project Details
 Normal mode
 ![Normal mode image](ReadMeImages/NormalMode.PNG?raw=true)
+
 Debug mode
 ![Debug mode image](/ReadMeImages/DebugMode.PNG?raw=true)
+
 Video Demonstration
-https://www.youtube.com/watch?v=fS3dax6Ur5s&feature=youtu.be
+
+[![Video Link](https://img.youtube.com/vi/fS3dax6Ur5s/0.jpg)](https://www.youtube.com/watch?v=fS3dax6Ur5s&feature=youtu.be)
 # Implentation
 ## Project Structure
 My game was created using c# along with two library SFML for the window, graphics, and controls. As well as box 2d for the physics.
