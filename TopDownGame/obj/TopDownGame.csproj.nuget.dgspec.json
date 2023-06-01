@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj": {}
+    "C:\\Users\\H1Ber\\OneDrive\\Documents\\SoftwareDevPortfolio\\FSMvsBT\\TopDownGame\\TopDownGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj": {
+    "C:\\Users\\H1Ber\\OneDrive\\Documents\\SoftwareDevPortfolio\\FSMvsBT\\TopDownGame\\TopDownGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj",
+        "projectUniqueName": "C:\\Users\\H1Ber\\OneDrive\\Documents\\SoftwareDevPortfolio\\FSMvsBT\\TopDownGame\\TopDownGame.csproj",
         "projectName": "TopDownGame",
-        "projectPath": "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj",
+        "projectPath": "C:\\Users\\H1Ber\\OneDrive\\Documents\\SoftwareDevPortfolio\\FSMvsBT\\TopDownGame\\TopDownGame.csproj",
         "packagesPath": "C:\\Users\\H1Ber\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\obj\\",
+        "outputPath": "C:\\Users\\H1Ber\\OneDrive\\Documents\\SoftwareDevPortfolio\\FSMvsBT\\TopDownGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
