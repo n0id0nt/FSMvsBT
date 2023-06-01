@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TopDownGame": {
+      "commandName": "Project",
+      "workingDirectory": "$(SolutionDir)"
+    }
+  }
+}

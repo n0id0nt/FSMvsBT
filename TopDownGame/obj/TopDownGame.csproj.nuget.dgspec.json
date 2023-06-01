@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj",
+        "projectName": "TopDownGame",
+        "projectPath": "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\TopDownGame.csproj",
+        "packagesPath": "C:\\Users\\H1Ber\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\H1Ber\\OneDrive\\Documents\\uni-files\\game AI\\cos30002-102568830\\21 - DOC - Custom Project D Level\\TopDownGame\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\H1Ber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Box2D": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "SFML.Net": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
+            "WaveEngine.Box2D": {
+              "target": "Package",
+              "version": "[2.5.0.39, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
