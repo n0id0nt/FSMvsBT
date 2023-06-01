@@ -17,9 +17,9 @@ the A* algorithm for path finding, to generate a path to each target during the 
 agent’s path.
 ## Project Details
 Normal mode
-![Normal mode image](ReadMeImages/NormalMode.png)
+![Normal mode image](ReadMeImages/NormalMode.PNG?raw=true)
 Debug mode
-![Debug mode image](/ReadMeImages/DebugMode.png)
+![Debug mode image](/ReadMeImages/DebugMode.PNG?raw=true)
 # Implentation
 ## Project Structure
 My game was created using c# along with two library SFML for the window, graphics, and controls.
@@ -96,14 +96,14 @@ collide whilst trying to avoid each other.
 ## Finite State Machine
 One of the Guards in my game implements a finite state machine to handle the behavior. The State
 diagram the guard is below. 
-![State Diagram](/ReadMeImages/StateDiagram.png)
+![State Diagram](/ReadMeImages/StateDiagram.PNG?raw=true)
 To implement the Finite state machine, i Used the following design pattern.
-![FSM UML Diagram](/ReadMeImages/FSMUML.png)
+![FSM UML Diagram](/ReadMeImages/FSMUML.PNG?raw=true)
 ## Behavior Tree
 Before this subject I have never implemented a behavior tree before, so I had to do research to learn
 about how they worked and how they were used. From what I learnt I created a plan to convert the
 behavior from the FSMGuard to a behavior tree. The plan is shown below.
-![Behaviour Tree Diagram](/ReadMeImages/BehaviourTreeDiagram.png)
+![Behaviour Tree Diagram](/ReadMeImages/BehaviourTreeDiagram.PNG?raw=true)
 In behavior trees there are 3 kinds of nodes leaf nodes, parent node, and decorator nodes. Leaf
 nodes are used the tasks that are at the and of each branch, there are type kinds of leaf nodes,
 Actions and Conditionals. Actions are when the node performs an action, example from my tree
@@ -115,7 +115,7 @@ the underlying task, in my implementation I have one decorator node Wait. The wa
 return the value of the underlying node until a certain amount of time has passed then it will return
 successful.
 The design pattern I used to create the behavior tree is shown below
-![Behaviour Tree UML Diagram](/ReadMeImages/BTUML.png)
+![Behaviour Tree UML Diagram](/ReadMeImages/BTUML.PNG?raw=true)
 When implementing the behavior tree, a big issue I had was handling interruptions of other tasks
 and knowing to end a task it was interrupted. To do this I created a queue of active tasks and if the
 queue has more than one task it means the previous task was interrupted so I need to end the
