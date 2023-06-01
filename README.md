@@ -8,9 +8,11 @@ In order to demonstrate the two techniques, two guards were created that each im
 The other techniques on display in my implementation are **steering force** and **A* path finding**. In the project steering forces are used to move both the player and the agents around, I also used steering forces so to enable the agents to avoid each other when they were heading the same direction. I use the A* algorithm for path finding, to generate a path to each target during the waypoint of the agent’s path.
 ## Project Details
 Normal mode
+
 ![Normal mode image](ReadMeImages/NormalMode.PNG?raw=true)
 
 Debug mode
+
 ![Debug mode image](/ReadMeImages/DebugMode.PNG?raw=true)
 
 Video Demonstration
@@ -53,16 +55,24 @@ The Guards movement is seek steering force towards its target whether it’s the
 Another thing I wanted the guard to do during its patrol state is to do collision avoidance between other guards so they don’t just wander into each other. To achieve this, I played around with and tweaked a combination of steering forces. The first force I looked at was the separation steering force the result of this is when the guards got close to each other they will repel like magnets but this looked unnatural as the paths around each other was quite large, the second steering force I looked at was collision avoidance (a steering force I looked at during a spike extension based off Fernando Bevilacqua article https://gamedevelopment.tutsplus.com/tutorials/understandingsteering-behaviors-collision-avoidance--gamedev-7777), after adding this steering force the avoidance was a lot smoother and more subtle, however a lot of the time during collision avoidance the guards were trying to avoid each other in the same direction, to address this I added the force alignment so during the collision avoidance the guards align in the opposite directions so they don’t collide whilst trying to avoid each other. 
 ## Finite State Machine
 One of the Guards in my game implements a finite state machine to handle the behavior. The State diagram the guard is below. 
+
 ![State Diagram](/ReadMeImages/StateDiagram.PNG?raw=true)
+
 To implement the Finite state machine, i Used the following design pattern.
+
 ![FSM UML Diagram](/ReadMeImages/FSMUML.PNG?raw=true)
+
 ## Behavior Tree
 Before this subject I have never implemented a behavior tree before, so I had to do research to learn about how they worked and how they were used. From what I learnt I created a plan to convert the behavior from the FSMGuard to a behavior tree. The plan is shown below.
+
 ![Behaviour Tree Diagram](/ReadMeImages/BehaviourTreeDiagram.PNG?raw=true)
+
 In behavior trees there are 3 kinds of nodes leaf nodes, parent node, and decorator nodes. Leaf nodes are used the tasks that are at the and of each branch, there are type kinds of leaf nodes, Actions and Conditionals. Actions are when the node performs an action, example from my tree above is the patrol task or the look for player task. Conditionals are when the task tests for a condition and will never return running. Parent nodes are a node that contain multiple child nodes, in my implementation there are two kinds of parent nodes Selectors and Sequence. The final node type is decorators, decorators are tasks with a single child, and the decorator modifies the result of the underlying task, in my implementation I have one decorator node Wait. The wait node will return the value of the underlying node until a certain amount of time has passed then it will return successful.
 
 The design pattern I used to create the behavior tree is shown below
+
 ![Behaviour Tree UML Diagram](/ReadMeImages/BTUML.PNG?raw=true)
+
 When implementing the behavior tree, a big issue I had was handling interruptions of other tasks and knowing to end a task it was interrupted. To do this I created a queue of active tasks and if the queue has more than one task it means the previous task was interrupted so I need to end the previous task.
 ## Comparision of behavior trees and finite state machines
 After implementing both techniques behavior trees and finite state machines I now feel like I have a good understanding of the differences between the two and their pros and cons.
