@@ -5,7 +5,7 @@ This project is a 2d top down stealth game where the player navigates a grid-bas
 
 In order to demonstrate the two techniques, two guards were created that each implement one of the techniques as the primary method of controlling their behavior. Each guard is a different color to differentiate the two in the final product.
 
-The other techniques on display in my implementation are **steering force** and **A* path finding**. In the project steering forces are used to move both the player and the agents around, I also used steering forces so to enable the agents to avoid each other when they were heading the same direction. I use the A* algorithm for path finding, to generate a path to each target during the waypoint of the agent’s path.
+The other techniques on display in my implementation are **steering force** and **A star path finding**. In the project steering forces are used to move both the player and the agents around, I also used steering forces so to enable the agents to avoid each other when they were heading the same direction. I use the A* algorithm for path finding, to generate a path to each target during the waypoint of the agent’s path.
 ## Project Details
 Normal mode
 
