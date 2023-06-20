@@ -10,3 +10,15 @@ C:\Users\H1Ber\OneDrive\Documents\uni-files\game AI\cos30002-102568830\21 - DOC 
 C:\Users\H1Ber\OneDrive\Documents\uni-files\game AI\cos30002-102568830\21 - DOC - Custom Project D Level\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.dll
 C:\Users\H1Ber\OneDrive\Documents\uni-files\game AI\cos30002-102568830\21 - DOC - Custom Project D Level\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.pdb
 C:\Users\H1Ber\OneDrive\Documents\uni-files\game AI\cos30002-102568830\21 - DOC - Custom Project D Level\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.genruntimeconfig.cache
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\bin\Release\netcoreapp2.1\TopDownGame.deps.json
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\bin\Release\netcoreapp2.1\TopDownGame.runtimeconfig.json
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\bin\Release\netcoreapp2.1\TopDownGame.runtimeconfig.dev.json
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\bin\Release\netcoreapp2.1\TopDownGame.dll
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\bin\Release\netcoreapp2.1\TopDownGame.pdb
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.csprojAssemblyReference.cache
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.AssemblyInfoInputs.cache
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.AssemblyInfo.cs
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.csproj.CoreCompileInputs.cache
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.dll
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.pdb
+C:\Users\H1Ber\OneDrive\Documents\SoftwareDevPortfolio\FSMvsBT\TopDownGame\obj\Release\netcoreapp2.1\TopDownGame.genruntimeconfig.cache

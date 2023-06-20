@@ -24,6 +24,8 @@ namespace TopDownGame
         // whether to reset level at the end of the update cycle
         private static bool resetLevel = false;
 
+        private static List<Scene> Coroutines = new List<Scene>();
+
         public static void NextLevel()
         {
             nextLevel = true;
@@ -237,6 +239,11 @@ namespace TopDownGame
                 ChangeLevelToNextLevel();
             else if (resetLevel)
                 ChangeLevelToResetLevel();
+        }
+
+        public static void CoroutineUpdate()
+        {
+
         }
 
         /// <summary>

@@ -10,7 +10,7 @@ namespace TopDownGame
         public float MaxSpeed { get; set; }
 
         public float MaxForce { get; set; }
-
+        
         public Vector2 Acc { get; set; }
 
         public Vector2 Vel { get; set; }

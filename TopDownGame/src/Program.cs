@@ -20,13 +20,15 @@ namespace TopDownGame
 
             Window.window.KeyReleased += new EventHandler<KeyEventArgs>(OnKeyRealeased);
 
-
+            // update loop
             while (Window.IsOpen)
             {
                 Window.DispatchEvents();
 
                 // update
                 Game.Update();
+
+                //Game.
 
                 // render
                 Window.Clear(Color.Black);
