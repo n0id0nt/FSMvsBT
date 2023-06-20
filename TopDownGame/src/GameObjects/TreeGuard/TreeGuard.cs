@@ -34,6 +34,8 @@ namespace TopDownGame
         // the range to the guards gun
         public const int gunRange = 170;
 
+        public bool chasingPlayer = false;
+
         public Queue<Task> activeTasks;
 
         public TreeGuard(Vector2 pos, Vector2 size, Path path, string image) : base(pos, size)
@@ -43,41 +45,68 @@ namespace TopDownGame
                 // create root
                 Sequence rootTask = new Sequence(this);
 
-                Selector patrolSelector = new Selector(this);
-                rootTask.Add(patrolSelector);
+                Selector playerInSightSelector = new Selector(this);
+                rootTask.Add(playerInSightSelector);
+                {
                     // add player sensor
-                    patrolSelector.Add(new IsPlayerSensed(this));
-                    // add patrol task
-                    patrolSelector.Add(new Patrol(this));
-
+                    playerInSightSelector.Add(new IsPlayerSensed(this));
+                    // test if player just left sight
+                    Selector patrolSelector = new Selector(this);
+                    playerInSightSelector.Add(patrolSelector);
+                    {
+                        // check if chasing player
+                        Sequence chasingPlayerSequence = new Sequence(this);
+                        patrolSelector.Add(chasingPlayerSequence);
+                        {
+                            chasingPlayerSequence.Add(new IsChasingPlayer(this));
+                            chasingPlayerSequence.Add(new Look(this));
+                            chasingPlayerSequence.Add(new SetChasingPlayer(this, false));
+                        }
+                        // add patrol task
+                        patrolSelector.Add(new Patrol(this));
+                    }
+                    
+                }
                 Selector lookSelector = new Selector(this);
                 rootTask.Add(lookSelector);
+                {
                     // add player in sight check
                     lookSelector.Add(new IsPlayerInSight(this));
                     // add look task
                     lookSelector.Add(new Look(this));
+                }
+
+                // all below tasks are about pursuing player so set chasing player to true
+                rootTask.Add(new SetChasingPlayer(this, true));
 
                 Selector chaseSelector = new Selector(this);
                 rootTask.Add(chaseSelector);
+                {
                     // add player range check
                     chaseSelector.Add(new IsPlayerWithinRange(this, 100f));
                     // add chase task
                     chaseSelector.Add(new Chase(this));
+                }
 
                 Sequence shootSequence = new Sequence(this);
                 rootTask.Add(shootSequence);
+                {
                     // add reload selector
                     Selector reloadSelector = new Selector(this);
                     shootSequence.Add(reloadSelector);
+                    {
                         // add bullets check
                         reloadSelector.Add(new HasBullets(this));
                         // add reload sequence
                         Sequence reloadSequence = new Sequence(this);
                         reloadSelector.Add(reloadSequence);
+                        {
                             reloadSequence.Add(new ChangeSpriteIndex(4, this));
                             reloadSequence.Add(new SetVelocity(this, new Vector2()));
                             reloadSequence.Add(new Wait(20, this));
                             reloadSequence.Add(new Reload(this));
+                        }
+                    }
                     // add aim task
                     shootSequence.Add(new TimerDecorator(this, new Aim(this), 35));
                     // add shoot task
@@ -85,6 +114,7 @@ namespace TopDownGame
                     shootSequence.Add(new SetVelocity(this, new Vector2()));
                     shootSequence.Add(new Wait(20, this));
                     shootSequence.Add(new Shoot(this));
+                }
 
                 root = new RootTask(rootTask);
             }
