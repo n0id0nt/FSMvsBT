@@ -28,8 +28,6 @@ namespace TopDownGame
                 // update
                 Game.Update();
 
-                //Game.
-
                 // render
                 Window.Clear(Color.Black);
 

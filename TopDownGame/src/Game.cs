@@ -241,11 +241,6 @@ namespace TopDownGame
                 ChangeLevelToResetLevel();
         }
 
-        public static void CoroutineUpdate()
-        {
-
-        }
-
         /// <summary>
         /// Runs the render function for the current scene
         /// </summary>
