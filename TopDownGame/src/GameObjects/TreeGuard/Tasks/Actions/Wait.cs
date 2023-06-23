@@ -16,7 +16,6 @@ namespace TopDownGame
 
         public override void Start()
         {
-            Started = true;
             ticks = 0;
         }
 
@@ -25,13 +24,11 @@ namespace TopDownGame
             if (ticks >= maxTicks)
                 return TaskStatus.Success;
             ticks++;
-            baseObject.AddToActiveTasks(this);
-            return TaskStatus.Running;
+            return baseObject.TaskRunning(this);
         }
 
         public override void End()
         {
-            Started = false;
         }
     }
 }

@@ -17,7 +17,6 @@ namespace TopDownGame
 
         public override void Start()
         {
-            Started = true;
             baseObject.textureRect.Left = (int)baseObject.Size.X * 0;
 
             // create path to target
@@ -54,13 +53,11 @@ namespace TopDownGame
             // set the acceleration to the force
             baseObject.Acc = force.Truncate(baseObject.MaxForce);
 
-            baseObject.AddToActiveTasks(this);
-            return TaskStatus.Running;
+            return baseObject.TaskRunning(this);
         }
 
         public override void End()
         {
-            Started = false;
         }
     }
 }

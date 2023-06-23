@@ -13,7 +13,6 @@ namespace TopDownGame
 
         public override void Start()
         {
-            Started = true;
             baseObject.Vel = new Vector2();
         }
 
@@ -25,7 +24,6 @@ namespace TopDownGame
 
         public override void End()
         {
-            Started = false;
         }
     }
 }

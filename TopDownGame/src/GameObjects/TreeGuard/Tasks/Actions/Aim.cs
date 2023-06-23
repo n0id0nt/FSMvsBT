@@ -13,7 +13,6 @@ namespace TopDownGame
 
         public override void Start()
         {
-            Started = true;
             baseObject.Vel = new Vector2();
             baseObject.textureRect.Left = (int)baseObject.Size.X * 3;
         }
@@ -28,14 +27,12 @@ namespace TopDownGame
 
             // face the player
             baseObject.facing = (player.Pos - baseObject.Pos).Normalized();
-
-            baseObject.AddToActiveTasks(this);
-            return TaskStatus.Running;
+            
+            return baseObject.TaskRunning(this);
         }
 
         public override void End()
         {
-            Started = false;
         }
     }
 }

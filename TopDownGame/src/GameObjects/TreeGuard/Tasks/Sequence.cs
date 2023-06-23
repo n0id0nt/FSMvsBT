@@ -11,33 +11,40 @@ namespace TopDownGame
 
         }
 
+        public override void Start()
+        {
+        }
+
         public override TaskStatus DoAction()
         {
-            for (int i = Subtasks.IndexOf(CurTask); i < Subtasks.Count; i++)
+            foreach (Task task in Subtasks)
             {
-                CurTask = Subtasks[i];
-
-                if (!CurTask.Started)
+                if (CanStartSubStask(task))
                 {
-                    CurTask.Start();
+                    task.Start();
                 }
-                TaskStatus result = CurTask.DoAction();
+
+                TaskStatus result = task.DoAction();
 
                 if (result == TaskStatus.Running)
                     return TaskStatus.Running;
 
                 if (result == TaskStatus.Success)
                 {
-                    CurTask.End();
-                }                
+                    //CurTask.End();
+                }
 
                 else if (result == TaskStatus.Failure)
                 {
+                    //CurTask.End();
                     return TaskStatus.Failure;
-                    CurTask.End();
                 }
             }
             return TaskStatus.Success;
+        }
+
+        public override void End()
+        {
         }
     }
 }

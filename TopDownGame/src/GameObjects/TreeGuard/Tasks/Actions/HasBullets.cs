@@ -11,10 +11,7 @@ namespace TopDownGame
 
         }
 
-        public override void Start()
-        {
 
-        }
 
         public override TaskStatus DoAction()
         {
@@ -26,7 +23,10 @@ namespace TopDownGame
 
         public override void End()
         {
+        }
 
+        public override void Start()
+        {
         }
     }
 }

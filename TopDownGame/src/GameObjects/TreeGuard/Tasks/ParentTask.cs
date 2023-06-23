@@ -7,7 +7,6 @@ namespace TopDownGame
     abstract class ParentTask : Task
     {
         protected List<Task> Subtasks;
-        protected Task CurTask;
 
         public ParentTask(TreeGuard baseObject) : base(baseObject)
         {
@@ -19,18 +18,9 @@ namespace TopDownGame
             Subtasks.Add(task);
         }
 
-        public override void Start()
+        protected bool CanStartSubStask(Task task)
         {
-            CurTask = Subtasks[0];
-            Started = true;
-        }
-
-        public override void End()
-        {
-            Started = false;
-            foreach (Task task in Subtasks)
-                if (task.Started)
-                    task.End();
+            return (baseObject.ActiveTask != task);
         }
     }
 }

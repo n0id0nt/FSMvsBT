@@ -14,7 +14,6 @@ namespace TopDownGame
     abstract class Task
     {
         protected TreeGuard baseObject;
-        public bool Started { get; protected set; }
 
         public Task(TreeGuard baseObject)
         {

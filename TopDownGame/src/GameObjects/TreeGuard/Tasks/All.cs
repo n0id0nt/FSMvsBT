@@ -4,9 +4,9 @@ using System.Text;
 
 namespace TopDownGame
 {
-    class Selector : ParentTask
+    class All : ParentTask
     {
-        public Selector(TreeGuard baseObject) : base(baseObject)
+        public All(TreeGuard baseObject) : base(baseObject)
         {
 
         }
@@ -16,8 +16,8 @@ namespace TopDownGame
         }
 
         public override TaskStatus DoAction()
-        {   
-            
+        {
+
             foreach (Task task in Subtasks)
             {
                 if (CanStartSubStask(task))
@@ -33,14 +33,13 @@ namespace TopDownGame
                 if (result == TaskStatus.Success)
                 {
                     //CurTask.End();
-                    return TaskStatus.Success;
                 }
-                
+
                 else if (result == TaskStatus.Failure)
                 {
                     //CurTask.End();
                 }
-            } 
+            }
             return TaskStatus.Failure;
         }
 

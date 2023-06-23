@@ -22,7 +22,6 @@ namespace TopDownGame
         public override void Start()
         {
             ticks = 0;
-            Started = true;
             subTask.Start();
         }
 
@@ -37,7 +36,6 @@ namespace TopDownGame
 
         public override void End()
         {
-            Started = false;
             subTask.End();
         }
     }

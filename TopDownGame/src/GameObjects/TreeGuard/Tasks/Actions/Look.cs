@@ -19,7 +19,6 @@ namespace TopDownGame
 
         public override void Start()
         {
-            Started = true;
             ticks = 0;
             initialRot = baseObject.facing;
             baseObject.Vel = new Vector2();
@@ -38,13 +37,11 @@ namespace TopDownGame
                 return TaskStatus.Success;
 
             ticks++;
-            baseObject.AddToActiveTasks(this);
-            return TaskStatus.Running;
+            return baseObject.TaskRunning(this);
         }
 
         public override void End()
         {
-            Started = false;
 
             baseObject.facing = initialRot;
         }
