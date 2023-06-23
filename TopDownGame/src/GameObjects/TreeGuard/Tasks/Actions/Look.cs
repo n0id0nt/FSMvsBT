@@ -36,6 +36,7 @@ namespace TopDownGame
             if (ticks > maxCount)
             {
                 baseObject.facing = initialRot;
+                baseObject.looking = false;
                 return TaskStatus.Success;
             }
 

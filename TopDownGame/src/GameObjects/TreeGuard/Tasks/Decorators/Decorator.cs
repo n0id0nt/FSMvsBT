@@ -15,5 +15,13 @@ namespace TopDownGame
         {
             this.subTask = subTask;
         }
+
+        protected void AddToActive(TaskStatus result)
+        {
+            if (result == TaskStatus.Running)
+            {
+                baseObject.AddToAciveTasks(this);
+            }
+        }
     }
 }

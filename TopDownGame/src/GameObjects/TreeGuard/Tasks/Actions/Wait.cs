@@ -9,7 +9,7 @@ namespace TopDownGame
         private int ticks;
         private int maxTicks;
 
-        public Wait(int time, TreeGuard baseObject) : base(baseObject)
+        public Wait(TreeGuard baseObject, int time) : base(baseObject)
         {
             maxTicks = time;
         }

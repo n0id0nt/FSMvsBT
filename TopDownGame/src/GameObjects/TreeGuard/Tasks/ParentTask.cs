@@ -20,7 +20,7 @@ namespace TopDownGame
 
         protected bool CanStartSubStask(Task task)
         {
-            return (baseObject.ActiveTask != task);
+            return (!baseObject.ActiveTask.Contains(task));
         }
     }
 }

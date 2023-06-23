@@ -28,7 +28,10 @@ namespace TopDownGame
                 TaskStatus result = task.DoAction();
 
                 if (result == TaskStatus.Running)
+                {
+                    baseObject.AddToAciveTasks(this);
                     return TaskStatus.Running;
+                }
 
                 if (result == TaskStatus.Success)
                 {

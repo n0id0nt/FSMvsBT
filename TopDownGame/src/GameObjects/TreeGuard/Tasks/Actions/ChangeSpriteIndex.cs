@@ -8,7 +8,7 @@ namespace TopDownGame
     {
         private int index;
 
-        public ChangeSpriteIndex(int index, TreeGuard baseObject) : base(baseObject)
+        public ChangeSpriteIndex(TreeGuard baseObject, int index) : base(baseObject)
         {
             this.index = index;
         }

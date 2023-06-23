@@ -7,16 +7,14 @@ namespace TopDownGame
     /// <summary>
     /// Will return the value of the underlying task until the timer has finished then it will return Success
     /// </summary>
-    class TimerDecorator : Task
+    class TimerDecorator : Decorator
     {
         private int ticks;
         private int maxTicks;
-        private Task subTask;
 
-        public TimerDecorator(TreeGuard baseObject, Task subTask, int time) : base(baseObject)
+        public TimerDecorator(TreeGuard baseObject, Task subTask, int time) : base(baseObject, subTask)
         {
             maxTicks = time;
-            this.subTask = subTask;
         }
 
         public override void Start()
@@ -31,6 +29,7 @@ namespace TopDownGame
             if (ticks >= maxTicks)
                 result = TaskStatus.Success;
             ticks++;
+            AddToActive(result);
             return result;
         }
 
