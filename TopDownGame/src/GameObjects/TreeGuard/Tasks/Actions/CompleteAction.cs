@@ -4,29 +4,27 @@ using System.Text;
 
 namespace TopDownGame
 {
-    class ChangeSpriteIndex : Task
+    class CompleteAction : Task
     {
-        private int index;
-
-        public ChangeSpriteIndex(TreeGuard baseObject, int index) : base(baseObject)
+        Action action;
+        public CompleteAction(TreeGuard baseObject, Action action) : base(baseObject)
         {
-            this.index = index;
+            this.action = action;
         }
 
         public override void Start()
         {
-            
         }
 
         public override TaskStatus DoAction()
         {
-            baseObject.textureRect.Left = (int)baseObject.Size.X * index;
+            action.Invoke();
+
             return TaskStatus.Success;
         }
 
         public override void End()
         {
-
         }
     }
 }

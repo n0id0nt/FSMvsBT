@@ -15,8 +15,6 @@ namespace TopDownGame
 
         public override void Start()
         {
-            Started = true;
-
             baseObject.textureRect.Left = (int)baseObject.Size.X * 1;
 
             foreach (GameObject gameObject in Game.Scene.GameObjects)
@@ -27,13 +25,11 @@ namespace TopDownGame
         public override TaskStatus DoAction()
         {
             baseObject.Acc = baseObject.Seek(target.Pos).Normalized() * baseObject.MaxForce;
-            baseObject.AddToActiveTasks(this);
-            return TaskStatus.Running;
+            return baseObject.TaskRunning(this);
         }
 
         public override void End()
         {
-            Started = false;
         }
     }
 }

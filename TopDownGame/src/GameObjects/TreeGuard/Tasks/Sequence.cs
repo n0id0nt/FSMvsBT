@@ -6,38 +6,57 @@ namespace TopDownGame
 {
     class Sequence : ParentTask
     {
-        public Sequence(TreeGuard baseObject) : base(baseObject)
-        {
+        bool memory;
+        int index = 0;
 
+        public Sequence(TreeGuard baseObject, bool memory = false) : base(baseObject)
+        {
+            this.memory = memory;
+        }
+
+        public override void Start()
+        {
+            index = 0;
         }
 
         public override TaskStatus DoAction()
         {
-            for (int i = Subtasks.IndexOf(CurTask); i < Subtasks.Count; i++)
+            // reset index when not using index
+            if (!memory)
             {
-                CurTask = Subtasks[i];
-
-                if (!CurTask.Started)
+                index = 0;
+            }
+            for (;index < Subtasks.Count;index++)
+            {
+                if (CanStartSubStask(Subtasks[index]))
                 {
-                    CurTask.Start();
+                    Subtasks[index].Start();
                 }
-                TaskStatus result = CurTask.DoAction();
+
+                TaskStatus result = Subtasks[index].DoAction();
 
                 if (result == TaskStatus.Running)
+                {
+                    baseObject.AddToAciveTasks(this);
                     return TaskStatus.Running;
+                }
 
                 if (result == TaskStatus.Success)
                 {
-                    CurTask.End();
-                }                
+                    //CurTask.End();
+                }
 
                 else if (result == TaskStatus.Failure)
                 {
-                    return TaskStatus.Failure;
-                    CurTask.End();
+                    //CurTask.End();
+                    return result;
                 }
             }
             return TaskStatus.Success;
+        }
+
+        public override void End()
+        {
         }
     }
 }

@@ -15,12 +15,11 @@ namespace TopDownGame
 
         public void Update()
         {
-            task.Start();
+            //task.Start();
 
             TaskStatus result = task.DoAction();
 
-            if (result != TaskStatus.Running)
-                task.End();
+            //if (result != TaskStatus.Running) task.End();
         }
     }
 }

@@ -2,29 +2,27 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace TopDownGame
 {
-    class Wait : Task
+    class CheckFunction : Task
     {
-        private int ticks;
-        private int maxTicks;
-
-        public Wait(TreeGuard baseObject, int time) : base(baseObject)
+        Func<bool> func;
+        public CheckFunction(TreeGuard baseObject, Func<bool> func) : base(baseObject)
         {
-            maxTicks = time;
+            this.func = func;
         }
 
         public override void Start()
         {
-            ticks = 0;
         }
 
         public override TaskStatus DoAction()
         {
-            if (ticks >= maxTicks)
+            if (func.Invoke())
                 return TaskStatus.Success;
-            ticks++;
-            return baseObject.TaskRunning(this);
+
+            return TaskStatus.Failure;
         }
 
         public override void End()

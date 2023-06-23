@@ -205,3 +205,8 @@ $RECYCLE.BIN/
 *.cache
 *.pdb
 *.dll
+*.cache
+*.dll
+*.pdb
+*.dll
+*.cache
