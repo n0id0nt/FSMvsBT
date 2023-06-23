@@ -34,7 +34,10 @@ namespace TopDownGame
                 baseObject.facing.Rotate(-1 * rotationFactor / maxCount);
 
             if (ticks > maxCount)
+            {
+                baseObject.facing = initialRot;
                 return TaskStatus.Success;
+            }
 
             ticks++;
             return baseObject.TaskRunning(this);
@@ -42,8 +45,6 @@ namespace TopDownGame
 
         public override void End()
         {
-
-            baseObject.facing = initialRot;
         }
     }
 }

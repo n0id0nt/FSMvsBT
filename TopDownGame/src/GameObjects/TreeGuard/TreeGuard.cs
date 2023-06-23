@@ -36,6 +36,8 @@ namespace TopDownGame
 
         public bool chasingPlayer = false;
 
+        public bool looking = false;
+
         private Task activeTask;
         public Task ActiveTask => activeTask;
 
@@ -54,7 +56,18 @@ namespace TopDownGame
                     rootSequence.Add(IsPlayerSensedSequence);
                     {
                         IsPlayerSensedSequence.Add(new IsPlayerSensed(this));
-                        IsPlayerSensedSequence.Add(new Chase(this));
+                        Selector IsPlayerInSightSelector = new Selector(this);
+                        IsPlayerSensedSequence.Add(IsPlayerInSightSelector);
+                        {
+                            Sequence IsPlayerInSightSequence = new Sequence(this);
+                            IsPlayerInSightSelector.Add(IsPlayerInSightSequence);
+                            {
+                                IsPlayerInSightSequence.Add(new IsPlayerInSight(this));
+                                IsPlayerInSightSequence.Add(new Chase(this));
+                            }
+
+                            IsPlayerInSightSelector.Add(new CompleteAction(this, () => looking = true));
+                        }
                     }
                     rootSequence.Add(new Patrol(this));
                 }

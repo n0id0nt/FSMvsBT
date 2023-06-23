@@ -37,7 +37,7 @@ namespace TopDownGame
                 else if (result == TaskStatus.Failure)
                 {
                     //CurTask.End();
-                    return TaskStatus.Failure;
+                    return result;
                 }
             }
             return TaskStatus.Success;
